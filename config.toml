@@ -1,0 +1,16 @@
+theme = "hugo-photo-theme"
+baseurl = ""
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+canonifyurls = true
+languageCode = "en-us"
+title = "Hugo Photo Theme"
+MetaDataFormat = "toml"
+[indexes]
+    category = "categories"
+    tag = "tags"
+[author]
+    name = "Sean Patrick Hagen"
+[permalinks]
+  post = "/:year/:month/:title/"

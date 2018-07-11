@@ -1,0 +1,14 @@
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="/">{{ .Title }}</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		  <ul>
+        {{ range .Site.Data.navigation}}
+        <li><a href="{{ .url }}">{{ .title }}</a></li>
+        {{ end}}
+		  </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->

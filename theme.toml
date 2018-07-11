@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Seanhagen"
+license = "MIT"
+licenselink = "https://github.com/seanhagen/hugo-photo-theme/blob/master/LICENSE"
+description = "Theme with nice big header images"
+homepage = "https://seanhagen.ca/"
+tags = ["website", "Disqus", "blog"]
+features = ["posts", "comments"]
+min_version = "0.41"
+
+[author]
+  name = "Sean Hagen"
+  homepage = "https://seanhagen.ca"
