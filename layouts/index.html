@@ -1,5 +1,57 @@
-{{ partial "header.html" . }}
-  {{ range first 20 .Data.Pages }}
-  <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-  {{ end }}
-{{ partial "footer.html" . }}
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+  <head>
+    <title>{{ .Site.Title }}</title>
+
+    {{ partial "_metadata.html" . }}
+  </head>
+
+  <body class="home">
+    {{ partial "_browser-upgrade.html" . }}
+    {{ partial "_navigation.html" . }}
+
+    {{ if .Site.Params.header }}
+    <div class="image-wrap">
+      <img src="/images/{{.Site.Params.header.feature}}.jpg"/>
+      {{ if .Site.Params.header.credit }}
+      <span class="image-credit">
+        Photo Credit:
+        <a href="{{.Site.Params.header.creditlink}}">
+          {{.Site.Params.header.credit}}
+        </a>
+      </span>
+      {{ end }}
+
+    </div>
+    {{ end}}
+
+
+    <div id="main" role="main">
+      <div class="article-author-side">
+
+      </div>
+       <div id="index">
+         <h3><a href="/posts/">Recent Posts</a></h3>
+
+         {{ range first 5 .Data.Pages }}
+         <article>
+           <h2 class="link-post">
+             <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
+             <a href="{{.Permalink}}" title="{{ .Title }}" target="_blank"><i class="fa fa-link"></i></a>
+           </h2>
+         </article>
+         {{ end }}
+       </div>
+    </div>
+    <div class="footer-wrap">
+      <footer>
+        {{ partial "_footer.html" . }}
+      </footer>
+    </div>
+
+    {{ partial "_scripts.html" . }}
+  </body>
+</html>

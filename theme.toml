@@ -8,7 +8,7 @@ description = "Theme with nice big header images"
 homepage = "https://seanhagen.ca/"
 tags = ["website", "Disqus", "blog"]
 features = ["posts", "comments"]
-min_version = "0.41"
+min_version = "0.25"
 
 [author]
   name = "Sean Hagen"

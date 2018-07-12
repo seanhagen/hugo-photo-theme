@@ -8,9 +8,16 @@ languageCode = "en-us"
 title = "Hugo Photo Theme"
 MetaDataFormat = "toml"
 [indexes]
-    category = "categories"
-    tag = "tags"
-[author]
-    name = "Sean Patrick Hagen"
+    post = "posts"
+    # category = "categories"
+    # tag = "tags"
 [permalinks]
   post = "/:year/:month/:title/"
+
+[params]
+    [params.author]
+        name = "Sean Patrick Hagen"
+    [params.header]
+        feature = "window-cropped"
+        credit = "Sean Hagen"
+        creditlink = "https://www.flickr.com/photos/rebelcan/12754943013/in/datetaken-public/"
