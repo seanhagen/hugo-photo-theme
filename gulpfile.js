@@ -8,8 +8,13 @@ var gulp = require("gulp"),
 gulp.task("scss", function() {
   del(["static/css/**/*"]);
   gulp
-    .src("src/scss/**/*.scss")
-    .pipe(sass({ outputStyle: "compressed" }))
+    .src("src/scss/main.scss")
+    .pipe(
+      sass({
+        outputStyle: "compressed",
+        includePaths: "_sass"
+      })
+    )
     .pipe(autoprefixer({ browsers: ["last 20 versions"] }))
     .pipe(hash())
     .pipe(gulp.dest("static/css"))

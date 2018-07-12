@@ -2,14 +2,18 @@
 <div id="main" role="main">
   {{ partial "_author.html" . }}
   <div id="index">
-    <h3><a href="/posts/">Recent Posts</a></h3>
-    <p></p>
-    {{ range first 10 (where .Site.Pages "Section" "post")}}
+    <h3>AAAAAAAAAAAAAAAAArchive</h3>
+
+    {{.Site.Pages}}
+
+    {{.Content}}
+
+    {{ range (where .Site.Pages "type" "post") }}
     <article>
-      <h2>
+      <h2 class="link-post">
         <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
+        <a href="{{.Permalink}}" title="{{ .Title }}" target="_blank"><i class="fa fa-link"></i></a>
       </h2>
-      <p>{{slicestr .Summary 0 160 |markdownify}}...</p>
     </article>
     {{ end }}
   </div>

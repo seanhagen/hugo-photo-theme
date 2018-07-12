@@ -2,10 +2,6 @@
    Pygments.rb syntax highlighting
    ========================================================================== */
 
-@import "variables";
-@import "grid";
-@import "mixins";
-
 .highlight {
 	background-color: #efefef;
 	font-family: $code-font;

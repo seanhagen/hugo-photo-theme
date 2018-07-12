@@ -1,4 +1,31 @@
-{{ partial "post_header.html" . }}
-<h1>{{ .Title }}</h1>
-{{ .Content }}
-{{ partial "footer.html" . }}
+{{ partial "_head.html" . }}
+<div id="main" role="main">
+  {{ partial "_author.html" . }}
+
+  <article class="post">
+    <div class="headline-wrap">
+      <h1>{{.Title}}</h1>
+    </div>
+
+    <div class="article-wrap">
+      {{ .Content }}
+      <hr />
+
+      <footer role="contentinfo">
+        <p class=""byline>
+          <strong>{{.Title}}</strong>
+          was published on <time datetime="{{ .Date }}">{{.Date.Format "Jan 2, 2006"}}</time>
+          and should take about {{.ReadingTime}} minutes to read.
+      </footer>
+    </div>
+
+    {{ if (isset .Site.Params "disqus") and (eq .Params.comments true) }}
+    <section id="disqus_thread"></section>
+    {{ end }}
+
+  </article>
+</div>
+
+
+
+{{ partial "_foot.html" . }}

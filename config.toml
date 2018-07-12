@@ -15,9 +15,33 @@ MetaDataFormat = "toml"
   post = "/:year/:month/:title/"
 
 [params]
-    [params.author]
-        name = "Sean Patrick Hagen"
-    [params.header]
-        feature = "window-cropped"
-        credit = "Sean Hagen"
-        creditlink = "https://www.flickr.com/photos/rebelcan/12754943013/in/datetaken-public/"
+
+[params.header]
+feature = "window-cropped"
+credit = "Sean Hagen"
+creditlink = "https://www.flickr.com/photos/rebelcan/12754943013/in/datetaken-public/"
+
+[params.author]
+avatar = ""
+name = "Sean Patrick Hagen"
+bio = ""
+
+[params.author.social]
+twitter = "seanphagen"
+youtube = ""
+twitch = ""
+facebook = ""
+linkedin = ""
+instagram = ""
+tumblr = ""
+github = ""
+stackoverflow = ""
+pinterest = ""
+steam = ""
+soundcloud = ""
+flickr = ""
+codepen = ""
+
+[params.author.google]
+plus = "SeanPatrickHagen"
+analytics = ""

@@ -2,10 +2,6 @@
    Page layout
    ========================================================================== */
 
-@import "variables";
-@import "grid";
-@import "mixins";
-
 body {
 	background-color: $bodycolor;
 	font-family: $base-font;
@@ -734,4 +730,7 @@ $button-size: 1.5rem;
 	border-style: solid !important;
 	border-color: lighten($black,50);
 	@include rounded(3px);
+}
+#goog-wm-sb {
+	@extend .btn;
 }
