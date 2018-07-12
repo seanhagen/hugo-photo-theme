@@ -15,17 +15,14 @@
     {{ partial "_browser-upgrade.html" . }}
     {{ partial "_navigation.html" . }}
 
-    {{ if .Site.Params.header }}
     <div class="image-wrap">
-      <img src="/images/{{.Site.Params.header.feature}}.jpg"/>
-      {{ if .Site.Params.header.credit }}
+      <img src="/images/{{$.Param "header.feature"}}.jpg"/>
+      {{ if $.Param "header.credit" }}
       <span class="image-credit">
         Photo Credit:
-        <a href="{{.Site.Params.header.creditlink}}">
-          {{.Site.Params.header.credit}}
+        <a href="{{$.Param "header.creditlink"}}">
+          {{$.Param "header.credit"}}
         </a>
       </span>
       {{ end }}
-
     </div>
-    {{ end}}

@@ -2,13 +2,11 @@
 <div id="main" role="main">
   {{ partial "_author.html" . }}
   <div id="index">
-    <h3>Archive</h3>
     <p></p>
 
     {{ range where .Site.Pages "Section" "post"}}
     {{ range .Data.Pages.GroupByPublishDate "2006" }}
     <h1>{{.Key}}</h1>
-
     {{ range sort .Pages "PublishDate" "desc"}}
     <article>
       <h2 class="link-post">
@@ -17,7 +15,6 @@
     </article>
     {{ end }}
     {{ end }}
-
     {{ end }}
 
   </div>

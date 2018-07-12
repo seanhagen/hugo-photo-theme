@@ -1,2 +1,5 @@
 node_modules
 /layouts/.tern-port
+/layouts/_default/.tern-port
+/layouts/archive/.tern-port
+/layouts/partials/.tern-port
