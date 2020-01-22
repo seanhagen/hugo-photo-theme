@@ -39,7 +39,12 @@
     <section id="disqus_thread"></section>
     {{ end }}
 
+    <p id="git-commit">
+      {{.GitInfo.AuthorName}} @ {{.GitInfo.AuthorDate}}
+      <br />
+      <a href="https://github.com/seanhagen/seanhagen.ca/commit/{{.GitInfo.Hash}}">{{.GitInfo.Hash}}</a>
+    </p>
+
   </article>
 </div>
-
 {{ partial "_foot.html" . }}

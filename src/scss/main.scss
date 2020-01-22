@@ -88,3 +88,15 @@ a {
 .image-wrap:after {
     display: none;
 }
+
+#main {
+    .post {
+        #git-commit {
+            font-size: 10pt;
+            font-family: monospace;
+            a {
+                :hover, :focus, :active, :visited { text-decoration: underline }
+            }
+        }
+    }
+}
