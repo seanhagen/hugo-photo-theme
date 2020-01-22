@@ -4,12 +4,16 @@
   <div id="index">
     <h3><a href="/posts/">Recent Posts</a></h3>
     <p></p>
-    {{ range first 10 (where .Site.Pages "Section" "post")}}
+    {{ range first 10 (sort (where .Site.Pages "Section" "post") "PublishDate" "desc")}}
     <article>
       <h2>
         <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
       </h2>
+      {{if gt (len .Summary) 160}}
       <p>{{slicestr .Summary 0 160 |markdownify}}...</p>
+      {{else}}
+      <p>{{.Summary |markdownify}}</p>
+      {{end}}
     </article>
     {{ end }}
   </div>

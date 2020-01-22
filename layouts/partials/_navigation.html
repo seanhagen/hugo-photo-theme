@@ -1,11 +1,11 @@
 <div class="navigation-wrapper">
 	<div class="site-name">
-		<a href="/">SeanHagen.ca</a>
+		<a href="/">{{ .Site.Title }}</a>
 	</div><!-- /.site-name -->
 	<div class="top-navigation">
-		<nav role="navigation" id="site-nav" class="nav">
+    <nav role="navigation" id="site-nav" class="nav">
 		  <ul>
-        {{ range .Site.Data.navigation}}
+        {{ range .Site.Data.navigation.nav}}
         <li><a href="{{ .url }}">{{ .title }}</a></li>
         {{ end}}
 		  </ul>

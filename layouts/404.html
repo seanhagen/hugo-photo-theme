@@ -1,0 +1,23 @@
+{{ partial "_head.html" . }}
+<div id="main" role="main">
+  {{ partial "_author.html" . }}
+  <div id="index">
+    <h3>404!</h3>
+
+    <p>Oh no. Nothing here. Maybe read one of these instead:</p>
+
+    {{ range first 5 (shuffle (where .Site.Pages "Section" "post"))}}
+    <article>
+      <h2>
+        <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
+      </h2>
+      {{ if gt (len .Summary) 200 }}
+      <p>{{slicestr .Summary 0 160 |markdownify}}...</p>
+      {{ else }}
+      <p>{{.Summary}}
+      {{ end }}
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ partial "_foot.html" . }}

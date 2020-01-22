@@ -14,10 +14,26 @@
       <footer role="contentinfo">
         <p class="byline">
           <strong>{{.Title}}</strong>
-          was published on <time datetime="{{ .Date }}">{{.Date.Format "Jan 2, 2006"}}</time>
+          was published on <time datetime="{{ .PublishDate }}">{{.PublishDate.Format "Jan 2, 2006"}}</time>
           and should take about {{.ReadingTime}} minutes to read.
       </footer>
     </div>
+
+    <div class="social-share">
+      <h4>Share on</h4>
+      <ul>
+        <li>
+          <a href="https://twitter.com/intent/tweet?text={{ .Permalink }}" class="twitter" title="Share on Twitter"><i class="fab fa-twitter"></i><span> Twitter</span></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" class="facebook" title="Share on Facebook"><i class="fab fa-facebook"></i><span> Facebook</span></a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/share?url={{ .Permalink }}" class="google-plus" title="Share on Google Plus"><i class="fab fa-google-plus"></i><span> Google+</span></a>
+        </li>
+      </ul>
+    </div><!-- /.social-share -->
+
 
     {{ if (isset .Site.Params "disqus") and (eq .Params.comments true) }}
     <section id="disqus_thread"></section>

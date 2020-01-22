@@ -5,9 +5,9 @@
     <p></p>
 
     {{ range where .Site.Pages "Section" "post"}}
-    {{ range .Data.Pages.GroupByPublishDate "2006" }}
+    {{ range .Data.Pages.GroupByDate "2006" }}
     <h1>{{.Key}}</h1>
-    {{ range sort .Pages "PublishDate" "desc"}}
+    {{ range sort .Pages "Date" "desc"}}
     <article>
       <h2 class="link-post">
         <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>

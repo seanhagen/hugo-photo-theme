@@ -3,6 +3,7 @@
 @import "variables";
 
 // Our variables
+$base-font: Helvetica, Arial, sans-serif;
 $base-font-family: Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
@@ -23,6 +24,13 @@ $content-width:    800px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
+
+$linkcolor: #343434;
+$link-color: $linkcolor;
+$linkcolorhover   : darken($linkcolor, 10);
+$linkcolorvisited : lighten($linkcolorhover, 20);
+$linkcolorfocus   : darken($linkcolorvisited, 10);
+
 
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
@@ -48,4 +56,35 @@ pre {
 }
 code {
     background-color: #272822;
+}
+
+a {
+    color: $link-color;
+    &:visited, &:active, &:hover {
+        color: $link-color;
+    }
+}
+
+#index article {
+    margin-top: 30px;
+
+    h2 {
+        font-weight: 700;
+    }
+
+}
+#index h3 {
+    font-weight: 700;
+}
+
+.article-author-side h3 {
+    font-weight: 600;
+}
+
+#index article p {
+    font-size: 0.775rem;
+}
+
+.image-wrap:after {
+    display: none;
 }
