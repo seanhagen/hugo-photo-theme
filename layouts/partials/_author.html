@@ -14,70 +14,66 @@
 
   <h3 itemprop="name">{{ .name }}</h3>
 
-  {{ if (isset . "bio") and (ne .bio "") }}
+  {{ if and (isset . "bio") (ne .bio "") }}
   <p>{{.bio}}</p>
   {{ end }}
 
   {{ if isset . "social" }}
   {{ with .social }}
 
-  {{ if (isset . "twitter")  and (ne .twitter "")}}
+  {{ if and (isset . "twitter")  (ne .twitter "")}}
   <a href="http://twitter.com/{{ .twitter }}" class="author-social" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a>
   {{ end }}
 
-  {{ if (isset . "youtube") and (ne .youtube "") }}
+  {{ if and (isset . "youtube") (ne .youtube "") }}
   <a href="https://youtube.com/channel/{{ .youtube }}" class="author-social" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
   {{ end }}
 
-  {{ if (isset . "twitch") and (ne .twitch "") }}
+  {{ if and (isset . "twitch") (ne .twitch "") }}
   <a href="https://twitch.tv/{{ .twitch }}" class="author-social" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
   {{ end }}
 
-  {{ if (isset . "facebook") and (ne .facebook "") }}
+  {{ if and (isset . "facebook") (ne .facebook "") }}
   <a href="http://facebook.com/{{ .facebook }}" class="author-social" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
   {{ end }}
 
-  {{ if (isset . "google") and (isset .google "plus") }}
-  <a href="http://plus.google.com/+{{ .google.plus }}" class="author-social" target="_blank"><i class="fab fa-google-plus-square"></i> Google+</a>
-  {{ end }}
-
-  {{ if (isset . "linkedin") and (ne .linkedin "")}}
+  {{ if and (isset . "linkedin") (ne .linkedin "")}}
   <a href="http://linkedin.com/in/{{ .linkedin }}" class="author-social" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
   {{ end }}
 
-  {{ if (isset . "instagram") and (ne .instagram "") }}
+  {{ if and (isset . "instagram") (ne .instagram "") }}
   <a href="http://instagram.com/{{ .instagram }}" class="author-social" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
   {{ end }}
 
-  {{ if (isset . "tumblr") and (ne .tumblr "") }}
+  {{ if and (isset . "tumblr") (ne .tumblr "") }}
   <a href="http://{{ .tumblr }}.tumblr.com" class="author-social" target="_blank"><i class="fab fa-tumblr-square"></i> Tumblr</a>
   {{ end }}
 
-  {{ if (isset . "github") and (ne .github "")}}
+  {{ if and (isset . "github") (ne .github "")}}
   <a href="http://github.com/{{ .github }}" class="author-social" target="_blank"><i class="fab fa-github"></i> Github</a>
   {{ end }}
 
-  {{ if (isset . "stackoverflow") and (ne .stackoverflow "") }}
+  {{ if and (isset . "stackoverflow") (ne .stackoverflow "") }}
   <a href="http://stackoverflow.com/users/{{ .stackoverflow }}" class="author-social" target="_blank"><i class="fab fa-stack-overflow"></i> Stackoverflow</a>
   {{ end }}
 
-  {{ if (isset . "pinterest") and (ne .pinterest "") }}
+  {{ if and (isset . "pinterest") (ne .pinterest "") }}
   <a href="http://www.pinterest.com/{{ .pinterest }}" class="author-social" target="_blank"><i class="fab fa-pinterest"></i> Pinterest</a>
   {{ end }}
 
-  {{ if (isset . "steam") and (ne .steam "")}}
+  {{ if and (isset . "steam") (ne .steam "")}}
   <a href="http://steamcommunity.com/id/{{ .steam }}" class="author-social" target="_blank"><i class="fab fa-steam-square"></i> Steam</a>
   {{ end }}
 
-  {{ if (isset . "soundcloud") and (ne .soundcloud "") }}
+  {{ if and (isset . "soundcloud") (ne .soundcloud "") }}
   <a href="http://soundcloud.com/{{ .soundcloud }}" class="author-social" target="_blank"><i class="fab fa-soundcloud"></i> Soundcloud</a>
   {{ end }}
 
-  {{ if (isset . "flickr") and (ne .flickr "")}}
+  {{ if and (isset . "flickr") (ne .flickr "")}}
   <a href="http://www.flickr.com/{{ .flickr }}" class="author-social" target="_blank"><i class="fab fa-flickr"></i> Flickr</a>
   {{ end }}
 
-  {{ if (isset . "codepen") and (ne .codepen "") }}
+  {{ if and (isset . "codepen") (ne .codepen "") }}
   <a href="http://codepen.io/{{ .codepen }}" class="author-social" target="_blank"><i class="fab fa-codepen"></i> CodePen</a>
   {{ end }}
 
