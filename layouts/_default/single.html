@@ -19,7 +19,7 @@
       </footer>
     </div>
 
-    {{ if (isset .Site.Params "disqus") and (eq .Params.comments true) }}
+    {{ if and (isset .Site.Params "disqus") (eq .Params.comments true) }}
     <section id="disqus_thread"></section>
     {{ end }}
 
