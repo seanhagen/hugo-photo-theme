@@ -48,6 +48,7 @@ gulp.task("js", function() {
 
 // Watch asset folder for changes
 gulp.task("watch", ["scss", "images", "js"], function() {
+  gulp.watch("_sass/**/*", ["scss"]);
   gulp.watch("src/scss/**/*", ["scss"]);
   gulp.watch("src/images/**/*", ["images"]);
   gulp.watch("src/js/**/*", ["js"]);

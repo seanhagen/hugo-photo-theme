@@ -4,7 +4,7 @@
   <div id="index">
     <h3><a href="/posts/">Recent Posts</a></h3>
     <p></p>
-    
+
     {{ $pages := .Pages }}
     {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
     {{ range first 10 (where $pages "Section" "!=" "") }}
@@ -13,13 +13,15 @@
         <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
       </h2>
       {{if ne .Summary ""}}
+      <div class="post-list-summary">
         {{if gt (len .Summary) 159}}
-          <p>{{slicestr .Summary 0 160 |markdownify}}...</p>
-          <p><a href="{{.Permalink}}" title="{{.Title}}">Read more</a></p>
+          <p class="summary">{{slicestr .Summary 0 160 |markdownify}}...</p>
+          <a href="{{.Permalink}}" title="{{.Title}}">Read more</a>
         {{else}}
-          <p>{{.Summary|markdownify}}...</p>
-          <p><a href="{{.Permalink}}" title="{{.Title}}">Read more</a></p>
+          <p class="summary">{{.Summary|markdownify}}...</p>
+          <a href="{{.Permalink}}" title="{{.Title}}">Read more</a>
         {{end}}
+      </div>
       {{end}}
     </article>
     {{ end }}
