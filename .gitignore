@@ -3,3 +3,4 @@ node_modules
 /layouts/_default/.tern-port
 /layouts/archive/.tern-port
 /layouts/partials/.tern-port
+static
