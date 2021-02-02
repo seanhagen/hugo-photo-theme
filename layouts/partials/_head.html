@@ -15,7 +15,7 @@
     {{ partial "_browser-upgrade.html" . }}
     {{ partial "_navigation.html" . }}
 
-    <div class="image-wrap">
+    <div class="image-wrap {{if .IsPage}}page{{end}}">
       <img src="/images/{{$.Param "header.feature"}}.jpg"/>
       {{ if $.Param "header.credit" }}
       <span class="image-credit">

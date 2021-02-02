@@ -23,16 +23,16 @@
     <section id="disqus_thread"></section>
     {{ end }}
 
-    {{if .IsPage}}
+    {{if and .IsPage .GitInfo}}
     <section id="git-info">
       <p>This post was authored by {{.GitInfo.AuthorName}} on {{.GitInfo.AuthorDate}}</p>
-      
+
       <p>Wanna see the commit? Go
       here: <a href="https://github.com/seanhagen/seanhagen.ca/commit/{{.GitInfo.Hash}}">{{.GitInfo.Hash}}</a></p>
-      
+
     </section>
     {{end}}
-    
+
   </article>
 </div>
 

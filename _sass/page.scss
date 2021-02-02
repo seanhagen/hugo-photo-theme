@@ -350,6 +350,15 @@ $button-size: 1.5rem;
 
 		  -ms-interpolation-mode: bicubic;
 	}
+
+  &.page {
+      img {
+          max-height: 500px;
+          width:100%;
+      }
+
+  }
+
 	.headline-wrap {
 		position: absolute;
 		bottom: 25px;
