@@ -1,0 +1,26 @@
+{{ partial "_head.html" . }}
+<div id="main" role="main">
+  {{ partial "_author.html" . }}
+  <div id="index" class="stories archive">
+    <p id="description">
+      {{ .Site.Params.Writing.Description }}
+    </p>
+    {{ range where .Site.Pages "Section" "writing"}}
+    {{ range .Data.Pages.GroupByDate "2006" }}
+    <h1>{{.Key}}</h1>
+    {{ range sort .Pages "Date" "desc"}}
+    <article>
+      <h2 class="link-post">
+        <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
+      </h2>
+      {{if ne .Summary ""}}
+      <p class="story-summary">{{.Summary}}</p>
+      {{end}}
+    </article>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+  </div>
+</div>
+{{ partial "_foot.html" . }}

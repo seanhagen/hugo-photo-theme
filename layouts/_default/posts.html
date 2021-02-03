@@ -1,0 +1,20 @@
+{{ partial "_head.html" . }}
+<div id="main" role="main">
+  {{ partial "_author.html" . }}
+  <div id="index" class="archive">
+    {{ range where .Site.Pages "Section" "posts"}}
+    {{ range .Data.Pages.GroupByDate "2006" }}
+    <h1>{{.Key}}</h1>
+    {{ range sort .Pages "Date" "desc"}}
+    <article>
+      <h2 class="link-post">
+        <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
+      </h2>
+    </article>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+  </div>
+</div>
+{{ partial "_foot.html" . }}

@@ -7,8 +7,9 @@
 
     {{ $pages := .Pages }}
     {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
-    {{ range first 10 (where $pages "Section" "!=" "") }}
+    {{ range first 10 (where $pages "Section" "=" "posts") }}
     <article>
+      <p>
       <h2>
         <a href="{{.Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
       </h2>

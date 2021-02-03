@@ -16,6 +16,9 @@ MetaDataFormat = "toml"
 
 [params]
 
+[params.writing]
+description = "Writing section description"
+
 [params.header]
 feature = "window-cropped"
 credit = "Sean Hagen"
